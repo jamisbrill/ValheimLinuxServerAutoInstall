@@ -7,11 +7,11 @@ mkdir valheim
 sudo useradd -m steam
 sudo passwd steam 
 
-sudo -u steam -s
+sudo -u steam -s   #create a steam user for safety :) 
 cd /home/steam
-sudo apt install steamcmd
+sudo apt install steamcmd   #install the steambinaries?
 
-
+#install for 64 bit systems
 sudo add-apt-repository multiverse /
  sudo dpkg --add-architecture i386
  sudo apt update
