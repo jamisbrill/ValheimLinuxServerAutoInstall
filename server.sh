@@ -17,22 +17,23 @@ sudo add-apt-repository multiverse /
  sudo dpkg --add-architecture i386
  sudo apt update
  sudo apt install lib32gcc-s1 steamcmd
+echo "Create steam user" 
  
- sudo -u steam -s   #create a steam user for safety :) 
-cd /home/steam
-mkdir valheim
 
-exit
+cd /home/steam
+sudo mkdir valheim
+
+
 cd /home/steam/valheim
-echo '#!/bin/sh steamcmd +@sSteamCmdForcePlatformType linux +force_install_dir /home/steam/valheim +login anonymous +app_update 896660 validate +quit' >> InstallUpdate.sh 
+sudo echo '#!/bin/sh steamcmd +@sSteamCmdForcePlatformType linux +force_install_dir /home/steam/valheim +login anonymous +app_update 896660 validate +quit' >> InstallUpdate.sh 
 
 pwd
-chmod +x /home/steam/valheim/installUpdate.sh
+sudo chmod +x /home/steam/valheim/installUpdate.sh
 
 ./installUpdate.sh
+echo "First debug"
 
-
-echo '#!/bin/sh 
+sudo echo '#!/bin/sh 
 export templdpath=$LD_LIBRARY_PATH  
 export LD_LIBRARY_PATH=./linux64:$LD_LIBRARY_PATH  
 export SteamAppID=892970
@@ -42,10 +43,11 @@ export LD_LIBRARY_PATH=$templdpath' >> valheim.sh
 
 sudo chmod +x /home/steam/valheim.sh
 
-su - steam #login as steam to launch and launch server
+
 cd /home/steam/valheim/
 ./valheim.sh
 
+echo "2 debug"
 
 
 
