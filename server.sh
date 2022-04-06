@@ -22,8 +22,8 @@ sudo add-apt-repository multiverse /
 cd /home/steam
 mkdir valheim
 
-
-cd valheim
+exit
+cd /home/steam/valheim
 echo '#!/bin/sh steamcmd +@sSteamCmdForcePlatformType linux +force_install_dir /home/steam/valheim +login anonymous +app_update 896660 validate +quit' >> InstallUpdate.sh 
 
 pwd
@@ -39,7 +39,7 @@ export SteamAppID=892970
 echo "Starting server PRESS CTRL-C to exit"  
 ./valheim_server.x86_64 -name "Jams-Server" -port 2456 <-nographics> <-batchmode> -world "JamsKingdom" -password "10005" -public 1  
 export LD_LIBRARY_PATH=$templdpath' >> valheim.sh
-exit
+
 sudo chmod +x /home/steam/valheim.sh
 
 su - steam #login as steam to launch and launch server
