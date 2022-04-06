@@ -21,7 +21,10 @@ echo "#!/bin/sh
 steamcmd +@sSteamCmdForcePlatformType linux +force_install_dir /path/to/server +login anonymous +app_update 896660 validate +quit"
 >> InstallUpdate.sh 
 
+pwd
 sudo chmod +x $HOME/InstallUpdate.sh
+
+sudo ./InstallUpdate.sh
 
 
 echo "#!/bin/sh 
